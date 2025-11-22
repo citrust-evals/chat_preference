@@ -17,14 +17,14 @@ class MultiResponseRequest(BaseModel):
     """Request model for generating multiple responses"""
     user_prompt: str = Field(..., description="User's original prompt/question")
     model_used: str = Field(default="gemini-2.0-flash", description="Which AI model to use")
-    num_responses: int = Field(default=3, description="Number of responses to generate")
+    num_responses: int = Field(default=2, description="Number of responses to generate")
     
     class Config:
         json_schema_extra = {
             "example": {
                 "user_prompt": "Best laptop under 50k?",
                 "model_used": "gemini-2.0-flash",
-                "num_responses": 3
+                "num_responses": 2
             }
         }
 
